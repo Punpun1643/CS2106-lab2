@@ -46,9 +46,9 @@ for i in subs/*; do
   fi
 
   # Generate output from C code using *.in files in ref
+  # Check if executable exists
   if [[ -e $i/$1 ]]; then
     for j in ref/*.in; do
-      # Check if executable exists
       $i/$1 < $j > $i/$(basename $j).out
     done
   fi
